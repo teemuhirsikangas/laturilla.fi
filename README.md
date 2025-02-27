@@ -1,4 +1,4 @@
-# Laturilla
+# Laturilla.fi
 
 26.2.2025 laturilla.fi site closed and source code made public in this repository and all records and registrations deleted.
 
@@ -31,8 +31,7 @@ Copyright by Teemu Hirsikangas 2021
 ## How to deploy
 
 ```
-git clone https://github.com/teemuhirsikangas/ChargerM.git
-git clone git@github.com:teemuhirsikangas/ChargerM.git
+git clone https://github.com/teemuhirsikangas/laturilla.fi.gi
 
 #to start the nodejs static build
 npm run start || test: serve -l 3000 -s build
