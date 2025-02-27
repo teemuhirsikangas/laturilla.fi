@@ -1,0 +1,161 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.App-menu {
+  text-align: right;
+}
+
+.spinner {
+  height: 80px;
+  margin: auto;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+/* new css for car component */
+
+* {
+  box-sizing: border-box;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.add-cars {
+  text-align: center;
+}
+
+.add-cars button {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 10px 30px 10px;
+}
+
+.car {
+  padding: 25px 25px 20px 25px;
+  justify-content: center;
+}
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
+}
+
+
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+input[type="submit"] {
+  padding: 5px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  width: 80px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #282c34;
+  color: antiquewhite;
+}
+
+
+.search > input[type="text"]{
+  width: 10%;
+  min-width: 135px;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 694px) and (max-width: 915px) {
+  .car {
+    max-width: 33%;
+  }
+}
+
+@media screen and (min-width: 652px) and (max-width: 693px) {
+  .car {
+    max-width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 651px) {
+  .car {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+.custom_nav_link {
+  align-self: flex-end!important;
+  text-align: end !important;
+  margin-right: 0px !important;
+  right: 0;
+  left: auto;
+}
+
+/* to render carriage returns in plate descriptions */
+.display-linebreak {
+  white-space: pre-line;
+}
+/* to render carriage returns in messages */
+.card-text {
+  white-space: pre-line;
+}
+
+
+/* card header when searching for plate */
+.card-header {
+  background-color: #e9ecef;
+}
+
+.card-footer {
+  background-color: #e9ecef;
+}
+
+ul {
+  text-align: left;
+}

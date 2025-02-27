@@ -1,0 +1,88 @@
+server {
+
+    server_name laturilla.fi;
+
+    location / {
+
+        gzip_static on;
+        gzip on;
+        gzip_vary on;
+        gzip_proxied any;
+        gzip_comp_level 6;
+        gzip_min_length 500;
+        gzip_buffers 16 8k;
+        gzip_http_version 1.1;
+        gzip_types
+            text/css
+            text/plain
+            text/javascript
+            application/javascript
+            application/json
+            application/x-javascript
+            application/xml
+            application/xml+rss
+            application/xhtml+xml
+            application/x-font-ttf
+            application/x-font-opentype
+            application/vnd.ms-fontobject
+            image/svg+xml
+            image/x-icon
+            application/rss+xml
+            application/atom_xml;
+        gzip_disable "MSIE [1-6]\.(?!.*SV1)";
+
+        proxy_pass http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        add_header Cache-Control public;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+
+        add_header Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' img-src * data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-ancestors 'self';";
+        ###these are set in the app by helmet
+        ## Expect-CT: max-age=0
+        ## Keep-Alive: timeout=5
+        ## Strict-Transport-Security: max-age=15552000; includeSubDomains
+        ## X-Content-Type-Options: nosniff
+        ## X-DNS-Prefetch-Control: off
+        ## X-Download-Options: noopen
+        ## X-Frame-Options: SAMEORIGIN
+        ## X-XSS-Protection: 0
+
+     }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/laturilla.fi/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/laturilla.fi/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+server {
+    if ($host = www.laturilla.fi) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = laturilla.fi) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+
+    server_name laturilla.fi www.laturilla.fi;
+    return 404; # managed by Certbot
+
+
+
+
+}

@@ -1,0 +1,48 @@
+{
+  "name": "ChargerM",
+  "version": "1.0.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node index.js",
+    "cleanbuild": "rm -rf node_modules; npm i; rm package-lock.json; npm i --package-lock-only"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teemuhirsikangas/laturilla.fi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teemuhirsikangas/laturilla.fi/issues"
+  },
+  "homepage": "https://laturilla.fi",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "gravatar": "^1.8.2",
+    "helmet": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.0",
+    "mongoose-unique-validator": "^3.1.0",
+    "nodemailer": "^6.7.5",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0",
+    "web-push": "^3.5.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.18"
+  }
+}

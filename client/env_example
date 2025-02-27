@@ -1,0 +1,14 @@
+# .env for client in this folder
+#Firebase key for push notifications
+REACT_APP_PUBLIC_VAPID_KEY=
+# 1 year cookies time
+REACT_APP_COOKIE_TTL=31556952
+REACT_APP_COOKIE_NAME=laturilla
+REACT_APP_BASE_API_URL=http://localhost:5000
+REACT_APP_VERSION=$npm_package_version
+
+#PORT=8000
+#HTTPS=true
+#SSL_CRT_FILE=cert.crt
+#SSL_KEY_FILE=cert.key
+NODE_ENV=production

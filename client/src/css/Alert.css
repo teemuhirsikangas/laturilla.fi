@@ -1,0 +1,13 @@
+
+.alert {
+    background: #e9ecef;
+    padding: 1rem;
+    border-radius: 3px;
+    font-size: 18px;
+  }
+
+.alert button {
+  font-size: 16px;
+  padding: 4px;
+  
+  }

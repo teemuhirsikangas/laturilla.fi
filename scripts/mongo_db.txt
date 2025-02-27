@@ -1,0 +1,84 @@
+Some scripts to setup MongoDB
+
+install mongo:
+
+compass for easy mongo UI:
+https://www.mongodb.com/try/download/compass?tck=docs_compass
+https://docs.mongodb.com/manual/tutorial/enable-authentication/
+
+mongo --port 27017
+
+---
+
+use admin
+
+----
+
+db.createUser(
+  {
+    user: "admin",
+    pwd: passwordPrompt(), // or cleartext password
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+  }
+)
+
+mongo --port 27017  --authenticationDatabase "admin" -u "admin" -p
+
+use chargerm
+db.createUser(
+  {
+    user: "laturilla",
+    pwd:  passwordPrompt(),
+    roles: [ { role: "readWrite", db: "chargerm" }, { role: "dbAdmin", db: "chargerm" } ]
+  }
+)
+
+db.updateUser( "laturilla",
+               {
+                 roles : [
+                           { role : "dbAdmin", db : "chargerm"  },
+                           { role : "readWrite", db : "chargerm"  }
+                         ]
+                }
+             )
+
+
+#mongo --port 27017 -u "laturilla" --authenticationDatabase "admin" -p
+
+mongo --port 27017  --authenticationDatabase "chargerm" -u "laturilla" -p
+
+mongo compass:
+mongodb://admin:passwordhere@localhost:27017/chargerm
+
+use chargerm
+db.getCollection("messages").find()
+
+db.getCollection("plates").find()
+
+db.getCollection("subscriptions").find()
+
+db.getCollection("users").find()
+
+db.getCollection("messages").find()
+
+db.getCollection("emails").find()
+
+use chargem
+
+db.plates.getIndexes()
+db.plates.dropIndex("plates")
+db.plates.reIndex()
+
+
+# SSH pipe to mongo from localhost
+ssh -L 9000:localhost:27017 username@laturilla.fi
+mongodb://admin:passwordhere@localhost:9000/chargerm
+
+
+search filter to remove user
+{email: 'email@address.com'}
+
+remove plate
+{user: ObjectId('604b5335aed4a5001bea4d53')}
+
+

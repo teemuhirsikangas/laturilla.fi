@@ -1,0 +1,22 @@
+Hei kanssa sähköautoilijat,
+Tein suomalaisen palvelun https://Laturilla.fi jolla käyttäjät voivat jättää viestejä toisille käyttäjille, esim pikalatureilla asioidessa.
+Vastaava kuin Needtocharge, mutta tarkoitus keskittyä vain suomen rajojen sisäpuolelle, suomalaiseen kommunikointiin ja palvelun nopeampaan kehittelyyn.
+
+Miksi tein tämän palvelun? Koska koronan myötä jäi aikaa harrastuksilta ja halusin opetella Reactia
+
+Tärkeimpinä syinä olikin viestien välitön lähettäminen ja vastaanottaminen, joka onnistuu Push notifikaatioilla (Andrdoid, ei vielä iOS tukea), mahdollisuus myös että viesti lähtee sähköpostina.
+Push notifikaatiot huomataan paremmin Hesen jonossa tai ruokaillessa koska kovinkaan moni ei varmaan ole sähköpostinotifikaatiot päällä, tai seuraile niitä niin aktiivisesti.
+
+Palvelu on Beta asteella, bugeja ja hiottavaa vielä varmasti löytyy, varsinkin UI:n osalta ei ole vielä kauneinta karkkia (Joku UI suunnittelija voisi auttaa :) ), mutta palvelu on toimiva ja hoitaa asiansa, toivottavasti.
+
+Tarkoitus on jatkaa palvelun kehittämistä koska itse sähköautoilijana usko että palvelulle tulee tarvetta enemmän jatkossa. Toisaalta parasta olisi että kaikki suijuisi aina malliikkaasti esim pikalaturilla eikä tälläisiä palveluita tarvittaisi ollenkaan :D
+
+Palvelun tarkoitus on suojella myös henkilön yksityisyyttä, jolloin kukaan vastapuoli ei saa tietoon kuin toisen käyttäjän nimen/nimimerkin jonka käyttäjä voi itse asettaa rekisteröidessä.
+Palvelussa ei myöskään ole mainos trackereitä tai muita 3rd party seurantasovelluksia. Mitä vähemmän Google/Facebook tietää sinusta, sen parempi.
+Palvelu toimii suomessa sijaitsevalla pilvipalvelimella, eikä näin data mene suomen rajojen ulkopuolelle ja palvelu toimii nopeasti. Push notifikaatiot on salattu päästä päähän jolloin push notifikaatiopalvelut eivät myöskään päääse viesteihin käsiksi.
+
+Ottaisin mielelläni kehitysideoita vastaan, tai tarkemmin priorisoisin millaisia toimintoja kanssa autoilijan haluaisivat sinne lisätä.ate
+Palautetta voi antaa suoraan sivuilta: https://laturilla.fi/feedback tai minulle facebookissa tai jos github on tuttu, tehdä sinne suoraan ticketin https://github.com/teemuhirsikangas/laturilla.fi/issues
+Palvelu on suunniteltu enempi mobiili selaimet mielessä kuin työpöytä.
+
+-Teemu

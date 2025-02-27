@@ -1,0 +1,29 @@
+#.env for server side in root folder
+NODE_ENV=production
+BASE_API_URL=http://localhost:5000
+BASE_URL=https://laturilla.fi
+PORT=5000
+
+#for google/firebase contact
+WEB_PUSH_CONTACT=mailto:username@laturilla.fi
+PUBLIC_VAPID_KEY= 
+PRIVATE_VAPID_KEY=
+GCMAPIKEY=
+#1day=86400secs
+WEB_PUSH_TTL=86400
+WEB_TIMEOUT=
+MONGODB_URI=mongodb://localhost:27017/chargerm
+MONGO_USER=laturilla
+MONGO_PASSWORD=
+
+JWT_SECRET=
+#365days jwt token
+JWT_TTL=365d
+
+DISABLE_EMAIL_SENDING=false
+SMTP_LOCAL=false
+SMTP_ADDRESS=localhost
+SMTP_PORT=465
+SMTP_USERNAME=
+SMTP_PASSWORD=
+FEEDBACK_RECIPIENT_EMAIL=feedback@laturilla.fi
