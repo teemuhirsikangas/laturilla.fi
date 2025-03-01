@@ -2,10 +2,10 @@
 
 26.2.2025 laturilla.fi site closed and source code made public in this repository and all records and registrations deleted.
 
-Year 2020 was different times, public charging points where few, and usually only one per site,
-now in 2025, charging places are everywhere no need to worry if charging places are
+Year 2020 was different times, public charging points where few, and usually only one per site.
+Now in 2025, charging places are everywhere and no need to worry if charging places are occupied
 
-This was mainly hobby project to learn react from scratch, before AI tools, might not contains so elegant solutions
+This was mainly hobby project to learn react from scratch, before AI tools.
 
 ## Screenshots
 
